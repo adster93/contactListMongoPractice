@@ -2,7 +2,7 @@ var express = require('express')
 var app = express();
 var mongojs = require('mongojs');
 //database and collection to be used
-var db = mongojs('contactlist', ['contactlist']);
+var db = mongojs('mongodb://adster93:mongotest@ds013898.mongolab.com:13898/heroku_db9m5c5w', ['contactlist']);
 var bodyParser = require('body-parser')
 
 app.use(express.static(__dirname + "/public"));
@@ -52,5 +52,5 @@ app.put('/contactlist/:id', function(req, res){
 		});
 });
 
-// app.listen(process.env.MONGOLAB_URI || 'mongodb://localhost/contactlist');
+// app.listen(mongodb:adster93:mongotest@ds013898.mongolab.com:13898/heroku_db9m5c5w || 'mongodb://localhost/contactlist');
 app.listen(process.env.PORT || 5000)
